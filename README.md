@@ -1,2 +1,3 @@
 # null-cipher
-My own secure cipher
+### Cipher created by me
+
