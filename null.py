@@ -17,19 +17,18 @@ def decode_cesar(text, n):
         output+=chr(b-n)
     return output
 def encode(text, password):
-    text = cesar(text, 18)
     output = base64.b64encode(text) + base64.b64encode(hashlib.md5(password).hexdigest()) 
     output = base64.b64encode(output)
     output = cesar(output, 9)
-    return output
+    return output.replace(' ','F==x8*/e)I')
 def decode(encoded_text, password):
-    output = base64.b64decode(encoded_text)
+    encoded_text = encoded_text.replace('F==x8*/e)I',' ')
+    output = decode_cesar(encoded_text, 9)
+    output = base64.b64decode(output)
     passw = base64.b64encode(hashlib.md5(password).hexdigest())
     if passw not in output:
         return False
     else:
-        output = decode_cesar(output, 9)
         output = output.replace(passw,'')
         decoded_text = base64.b64decode(output)
-        decoded_text = decode_cesar(decoded_text, 18)
         return decoded_text
