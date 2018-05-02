@@ -17,7 +17,7 @@ if q == options[0]:
     text_to_encode = raw_input('\nText to encode> ')
     passw = raw_input('Password to use> ')
     encoded_text = null.encode(text_to_encode,passw)
-    print('Encoded text: %s' %encoded_text)
+    print('Encoded text:\n%s' %encoded_text)
 
 
 if q == options[1]:
@@ -27,7 +27,7 @@ if q == options[1]:
     if decoded_text == False:
         print('Invalid password!')
     else:
-	print('Decoded text: %s' %decoded_text)
+	print('Decoded text:\n%s' %decoded_text)
 if q == options [2]:
 	file_to_encode = raw_input('\nFile to encode> ')
 	passw = raw_input('Password to use> ')
